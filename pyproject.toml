@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pivot-copilot"
+version = "0.1.0"
+description = "Human-in-the-loop reasoning copilot for lab-based red team lateral movement planning (suggestion-only, no exploit execution)"
+requires-python = ">=3.9"
+dependencies = [
+    "click==8.1.7",
+]
+
+[project.scripts]
+pivot-copilot = "pivot_copilot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
